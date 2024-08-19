@@ -49,7 +49,7 @@ def podatki(oglas):
     return {
     'delo': delo.group(1),
     'št_oglasa': št_oglasa.group(1),
-    'lokacija': lokacija.group(1) if lokacija else 'ni znano',
+    'lokacija': lokacija.group(1).strip() if lokacija else 'ni znano',
     'plača_neto': plača_neto.group(1) if plača_neto else 'po dogovoru',
     'plača_bruto': plača_bruto.group(1) if plača_bruto else 'po dogovoru',
     'opis': opis.group(1) if opis else '',
