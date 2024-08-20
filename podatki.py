@@ -37,8 +37,8 @@ def podatki(oglas):
     delo = re.search(r'2">.+<h5 class="mb-0">(.*)</h5>', oglas)
     št_oglasa = re.search(r'<article class="job-item" data-jobid="(\d*)">', oglas)
     lokacija = re.search(r'icon-location"></use></svg>(\D*)</p>', oglas)
-    plača_neto = re.search(r'<strong>([^-]*)</strong>', oglas)
-    plača_bruto = re.search(r'</strong>(.*?)</a>', oglas)
+    plača_neto = re.search(r'<strong>([^-]*) €/h neto</strong>', oglas)
+    plača_bruto = re.search(r'</strong> \((.*?) €/h bruto\)</a>', oglas)
     opis = re.search(r'<p class="description text-break">(.*?)</p>', oglas)
     prosta_mesta = re.search(r'Prosta mesta: <strong><!--sse-->(.*?)<!--/sse--></strong></li>', oglas)
     trajanje = re.search(r'<li>Trajanje: <strong><!--sse-->(.*?)<!--/sse--></strong></li>', oglas)
@@ -50,8 +50,8 @@ def podatki(oglas):
     'delo': delo.group(1),
     'št_oglasa': št_oglasa.group(1),
     'lokacija': lokacija.group(1).strip() if lokacija else 'ni znano',
-    'plača_neto': plača_neto.group(1) if plača_neto else 'po dogovoru',
-    'plača_bruto': plača_bruto.group(1) if plača_bruto else 'po dogovoru',
+    'plača_neto[€/h]': plača_neto.group(1) if plača_neto else 'po dogovoru',
+    'plača_bruto[€/h]': plača_bruto.group(1) if plača_bruto else 'po dogovoru',
     'opis': opis.group(1) if opis else '',
     'prosta_mesta': prosta_mesta.group(1) if prosta_mesta else '1',
     'trajanje': trajanje.group(1) if trajanje else 'po dogovoru',
@@ -91,7 +91,7 @@ def main(redownload=True,):
     ads = [podatki(oglas) for oglas in oglasi]
     oglasi_v_csv(ads, "podatki.csv", "podatki.csv")
 
-
+        
 if __name__ == '__main__':
     main()
 
