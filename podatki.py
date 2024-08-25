@@ -85,7 +85,7 @@ def main(redownload=True,):
         if (redownload):
             save_frontpage(url, "podatki.html", f"podatki{i + 1}.html")
     besedilo = ""
-    for i in range(10):
+    for i in range(20):
         besedilo += datoteka_v_niz("podatki.html", f"podatki{i + 1}.html")
     oglasi = besedilo_v_oglase(besedilo)
     ads = [podatki(oglas) for oglas in oglasi]
