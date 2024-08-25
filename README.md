@@ -1,5 +1,5 @@
 # projektna-naloga
-analiza podatkov iz spletne strani študentskega servisa.
+Analiza podatkov iz spletne strani študentskega servisa.
 
 Za vsak oglas sem zajela:
 (-) šifro oziroma številko oglasa,
