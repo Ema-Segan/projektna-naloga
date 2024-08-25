@@ -80,7 +80,7 @@ def oglasi_v_csv(oglasi, directory, datoteka):
     return None
 
 def main(redownload=True,):
-    for i in range(10):
+    for i in range(20):
         url = f"https://www.studentski-servis.com/studenti/prosta-dela?scrolltop=1&kljb=&page={i + 1}&isci=1&sort=&dm1s=1&hourlyratefrom=6.2&hourlyrateto=21&hourly_rate=6.2%3B21"
         if (redownload):
             save_frontpage(url, "podatki.html", f"podatki{i + 1}.html")
