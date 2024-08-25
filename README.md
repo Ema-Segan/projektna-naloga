@@ -20,4 +20,3 @@ Analizirala sem:
 (-) Katera so najbolj iskana področja dela in na katerih lokacijah so določena dela najbolj pogosta.
 (-) Katera vrsta dela je najbolje plačana.
 (-) Prosta mesta in plačilo
-
